@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Xuite 安裝 Facebook 留言板 + 留言 email 通知 + 自適應寬度 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="要在 Xuite 中安裝 FB 留言板是一件不容易的事，本篇的程式碼出自於這個「Blogger版本」，略微更改後，就能在 Xuite 實現「FB 留言框 + email 通知 + 自適應寬度」。                          請參照以下的安裝流程，若想先看效果可點以下網頁看：                          點此看範例網頁">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xuite 安裝 Facebook 留言板 + 留言 email 通知 + 自適應寬度">
+<meta property="og:url" content="https://abc.wfublog.com/2014/05/xuite-facebook-comment-email-responsive.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="要在 Xuite 中安裝 FB 留言板是一件不容易的事，本篇的程式碼出自於這個「Blogger版本」，略微更改後，就能在 Xuite 實現「FB 留言框 + email 通知 + 自適應寬度」。                          請參照以下的安裝流程，若想先看效果可點以下網頁看：                          點此看範例網頁">
+<meta property="og:locale">
+<meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgULZ5NyGdRD-D6PB06W1Oz-IHHWYHeP-6TKhcDwshZeyFqRZeJGdljpV-7KhBfeQocI60M1YEAZyJgCDcf0ZmWAu4a2O1vGw-qjP2S07QaIzb52lFrYiM4DyES_8pT-OVlhGg4Mw-H0F1I/s1600/facebook-comment-email-notification.jpg">
+<meta property="article:published_time" content="2014-05-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-04-02T04:11:42.619Z">
+<meta property="article:author" content="Wayne Fu">
+<meta property="article:tag" content="facebook">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgULZ5NyGdRD-D6PB06W1Oz-IHHWYHeP-6TKhcDwshZeyFqRZeJGdljpV-7KhBfeQocI60M1YEAZyJgCDcf0ZmWAu4a2O1vGw-qjP2S07QaIzb52lFrYiM4DyES_8pT-OVlhGg4Mw-H0F1I/s1600/facebook-comment-email-notification.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://abc.wfublog.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Xuite 安裝 Facebook 留言板 + 留言 email 通知 + 自適應寬度" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/05/xuite-facebook-comment-email-responsive.html" class="article-date">
+  <time class="dt-published" datetime="2014-05-27T16:00:00.000Z" itemprop="datePublished">2014-05-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Cat1/">Cat1</a>►<a class="article-category-link" href="/categories/Cat1/Cat2/">Cat2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Xuite 安裝 Facebook 留言板 + 留言 email 通知 + 自適應寬度
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <span class="title-img"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgULZ5NyGdRD-D6PB06W1Oz-IHHWYHeP-6TKhcDwshZeyFqRZeJGdljpV-7KhBfeQocI60M1YEAZyJgCDcf0ZmWAu4a2O1vGw-qjP2S07QaIzb52lFrYiM4DyES_8pT-OVlhGg4Mw-H0F1I/s1600/facebook-comment-email-notification.jpg" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgULZ5NyGdRD-D6PB06W1Oz-IHHWYHeP-6TKhcDwshZeyFqRZeJGdljpV-7KhBfeQocI60M1YEAZyJgCDcf0ZmWAu4a2O1vGw-qjP2S07QaIzb52lFrYiM4DyES_8pT-OVlhGg4Mw-H0F1I/s1600/facebook-comment-email-notification.jpg"/></a></span>要在 Xuite 中安裝 FB 留言板是一件不容易的事，本篇的程式碼出自於這個「<a href="http://www.wfublog.com/2014/05/facebook-comment-email-notification-responsive.html" target="_blank">Blogger版本</a>」，略微更改後，就能在 Xuite 實現「FB 留言框 + email 通知 + 自適應寬度」。<br />
+            <br />
+            請參照以下的安裝流程，若想先看效果可點以下網頁看：<br />
+            <br />
+            <div style="text-align: center;"><a class="button3D" href="http://blog.xuite.net/wayne.fu/blog/63730724" style="color: #3a8a9e; font-size: 20px; text-decoration: none; width: 200px;" target="_blank">點此看範例網頁</a></div><br />
+            <a name="more"></a><br />
+            <br />
+            <h2>一、安裝程式碼</h2><br />
+            請到 Xuite 後台 → 編排欄位(含自由欄位) → 新增自由欄位 → 複製貼上以下程式碼：<br />
+            <br />
+            <script>document.write(unescape("%3Ccode%20style%3D%22background%3A%20%23eeeeee%20url%28https%3Ahttps://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDSoK3ddY4rrSSFKOdl2qpKBSGeJY15butacWr9w6FwiP1XTk98hV4bAtzFCvzOrr2eRteBy6zwW45GvbM4j9xle4nk1e0zOGy01xaPUZr7QNfXfypL8h7n6D3iIDRV1WI5iprl6CrErhf/s1600/wfublog-code.gif)%20left%20top%20repeat-y;%22%3E%3Col%20type=%22A%22%3E%3Cli%3E&lt;!--%20FB%25u7559%25u8A00%25u6846%25u61F6%25u4EBA%25u5305+%u7559%u8A00%u901A%u77E5+%u81EA%u9069%u61C9%u5BEC%u5EA6%20start%20--%26gt%3B%3C/li%3E%0A%3Cli%3E%26lt%3Bdiv%20id%3D%22fb-comment-install%22%26gt%3B%26lt%3B/div%26gt%3B%3C/li%3E%0A%3Cli%3E%26lt%3Bscript%26gt%3B%3C/li%3E%0A%3Cli%3Evar%20fbCommR%20%3D%20%7B%7D%3B%3C/li%3E%0A%3Cli%3EfbCommR.width%20%3D%20%3Cb%3E%3Cspan%20style%3D%22color%3A%20%23990000%3B%22%3E1%3C/span%3E%3C/b%3E%3B%20//%20%u53EF%u6539%u70BA%u81EA%u8A02%u7684%u5BEC%u5EA6%u767E%u5206%u6BD4%2C%20%u4F8B%u5982%201%20%u4EE3%u8868%20100%25%2C%200.8%20%u4EE3%u8868%2080%25%3C/li%3E%0A%3Cli%3EfbCommR.email%20%3D%20%22%3Cspan%20style%3D%22color%3A%20%23990000%3B%22%3E%3Cb%3Ewaynefu.g@gmail.com%3C/b%3E%3C/span%3E%22%3B%20//%20%u586B%u5165%u81EA%u5DF1%u7684%20email%2C%20%u53EF%u6536%u5230%u8A2A%u5BA2%u7559%u8A00%u901A%u77E5%3C/li%3E%0A%3Cli%3EfbCommR.admins%20%3D%20%3Cspan%20style%3D%22color%3A%20%233d85c6%3B%22%3E351945654935259%3C/span%3E%3B%20//%20%u586B%u5165%u81EA%u5DF1%u7684%20FB%20%u7BA1%u7406%u8005%20ID%2C%20%u81EA%u5DF1%u7684%u7559%u8A00%u5C31%u4E0D%u6703%u6536%u5230%20email%20%u901A%u77E5%3C/li%3E%0A%3Cli%3EfbCommR.numposts%20%3D%20%3Cspan%20style%3D%22color%3A%20%233d85c6%3B%22%3E5%3C/span%3E%3B%20//%20%u6700%u591A%u986F%u793A%u5E7E%u5247%u7559%u8A00%3C/li%3E%0A%3Cli%3EfbCommR.fbLocation%20%3D%20%22.item_message%22%3B%20//%20%u7559%u8A00%u6846%u7684%u64FA%u653E%u4F4D%u7F6E%3C/li%3E%0A%3Cli%3EfbCommR.color%20%3D%20%22%3Cspan%20style%3D%22color%3A%20%233d85c6%3B%22%3Elight%3C/span%3E%22%3B%20//%20%u9810%u8A2D%u503C%u9069%u5408%u90E8%u843D%u683C%u5E95%u8272%u70BA%u6DFA%u8272%uFF1B%u82E5%u90E8%u843D%u683C%u5E95%u8272%u70BA%u6DF1%u8272%2C%20%u5B57%u4E32%u8ACB%u6539%u70BA%20%22dark%22%3C/li%3E%0A%3Cli%3EfbCommR.sheet%20%3D%20%22dEJjWGJDWWlDRl9YZld0ZDJGN2tlN0E6MA%22%3B%3C/li%3E%0A%3Cli%3EfbCommR.postUrl%20%3D%20%22http%3A//%22%20+%20location.hostname%20+%20location.pathname%3B%3C/li%3E%0A%3Cli%3E%28function%20%28%29%20%7B%3C/li%3E%0A%3Cli%3E%09var%20url%20%3D%20%22https%3A//googledrive.com/host/0BykclfTTti-0ZnpXa185Z1VkVDg/xuite-fbCommResponsive-140527-min.js%22%2C%3C/li%3E%0A%3Cli%3E%09%09script%20%3D%20document.createElement%28%22script%22%29%3B%3C/li%3E%0A%3Cli%3E%09script.src%20%3D%20url%3B%3C/li%3E%0A%3Cli%3E%09document.documentElement.firstChild.appendChild%28script%29%3B%3C/li%3E%0A%3Cli%3E%7D%20%29%28%29%3B%3C/li%3E%0A%3Cli%3E%26lt%3B/script%26gt%3B%3C/li%3E%0A%3Cli%3E%26lt%3B%21--%20FB%u7559%u8A00%u6846%u61F6%u4EBA%u5305+%u7559%u8A00%u901A%u77E5+%u81EA%u9069%u61C9%u5BEC%u5EA6%20end%2C%20Designed%20by%20WFU%20BLOG%20--%26gt%3B%3C/li%3E%3C/ol%3E%3C/code%3E"));</script><br />
+            基本上如果沒有特殊需求的話，儲存後就可以看到效果了，FB 留言框會出現在 Xuite 留言區塊的上方。<br />
+            <br />
+            如果需要更多的功能，那麼請繼續往下看如何修改參數，及其他安裝步驟。<br />
+            <br />
+            <br />
+            <br />
+            <h2>二、修改參數</h2><br />
+            請參照安裝程式碼行號──<br />
+            <br />
+            <b>E：</b>預設值 <b><span style="color: #990000;">1</span></b> 代表 FB 留言框的寬度為 100%；若改為 0.9 代表寬度為 90%。<br />
+            <br />
+            <b>F：</b>請改為自己的 email，那麼只要一有留言，可及時收到通知。<br />
+            <br />
+            <b>G：</b>請參考「三、FB 管理者 ID」的步驟，填入自己的 FB 管理者 ID，那麼自己的留言就不會收到 email 通知。<br />
+            <br />
+            <b>H：</b>設定顯示幾則留言<br />
+            <br />
+            <b>J：</b>若部落格底色為深色, 字串請改為 &quot;dark&quot;<br />
+            <br />
+            <br />
+            <br />
+            <h2>三、FB 管理者 ID</h2><br />
+            在預設的情況下，所有留言都會寄發 email 通知，包括自己的留言也是。但一般來說，站長自己的留言是不需要寄發 email 通知的，因此<b><span style="color: #990000;">程式碼 G 行填入 FB 管理者 ID 時，這個工具就能判斷出站長身份，從而不寄出站長的留言 email 通知。</span></b><br />
+            <br />
+            請依照這篇「<a href="http://www.wfublog.com/2013/11/facebook-comment-easy-install.html" target="_blank">Facebook留言板安裝懶人包</a>」→「一、準備動作」，來取得 FB 管理者 ID。<br />
+            <br />
+            <br />
+            <br />
+            <h2>四、其他說明及注意事項</h2><br />
+            1. 為了避免重複內容，關於「使用說明」、「Email 每日寄送額度」等等事宜，請直接參照「<a href="http://www.wfublog.com/2013/11/facebook-comment-email-notification.html" target="_blank">這篇文章</a>」→「五、使用說明」→「六、其他注意事項」<br />
+            <br />
+            2. 從 2014&#x2F;8 開始，Xuite 在文章下方強制新增了一個 FB 留言框，請先參考「<a href="http://xuite.wfublog.com/2014/08/xuite-facebook-comment-box-shut-down.html" target="_blank">為何 Xuite 出現了 Facebook 留言框？要如何關閉？</a>」來移除這個留言框，再執行本文的工具。
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://abc.wfublog.com/2014/05/xuite-facebook-comment-email-responsive.html" data-id="clui6qbt10004loq65s9z9dok" data-title="Xuite 安裝 Facebook 留言板 + 留言 email 通知 + 自適應寬度" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/facebook/" rel="tag">facebook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/08/xuite-facebook-comment-box-shut-down.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          為何 Xuite 出現了 Facebook 留言框？要如何關閉？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/05/xuite-comment-tab.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Xuite 綜合留言板 (含 Google+ 與 Facebook)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Cat1/">Cat1</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cat1/Cat2/">Cat2</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cat3/">Cat3</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cat3/Cat4/">Cat4</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cat5/">Cat5</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cat5/Cat6/">Cat6</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cat5/Cat6/Cat7/">Cat7</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/PlayStation/">PlayStation</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/test/">test</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/test/l3/">l3</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdown/">markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook/" rel="tag">facebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/" rel="tag">google+</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/facebook/" style="font-size: 20px;">facebook</a> <a href="/tags/google/" style="font-size: 10px;">google+</a> <a href="/tags/test/" style="font-size: 15px;">test</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/cancel-markdown.html">取消 markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/abcd.html">abcd</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/tttt.html">tttt</a>
+          </li>
+        
+          <li>
+            <a href="/2014/08/xuite-facebook-comment-box-shut-down.html">為何 Xuite 出現了 Facebook 留言框？要如何關閉？</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05/xuite-facebook-comment-email-responsive.html">Xuite 安裝 Facebook 留言板 + 留言 email 通知 + 自適應寬度</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Wayne Fu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
